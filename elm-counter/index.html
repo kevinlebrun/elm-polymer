@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elm Counter</title>
+
+        <!-- <script src="../bower_components/webcomponentsjs/webcomponents&#45;lite.min.js"></script> -->
+
+        <script src="counter.js"></script>
+
+        <link rel="import" href="my-elm-counter.html"/>
+    </head>
+
+    <body>
+        <my-elm-counter id="counter" value=1></my-elm-counter>
+
+        <p>In the document, the value is <span class="value">1</span></p>
+
+        <script>
+            var counter = document.getElementById('counter');
+            counter.addEventListener('value-changed', function (e) {
+                document.querySelector('.value').textContent = e.detail.value;
+            });
+        </script>
+    </body>
+</html>

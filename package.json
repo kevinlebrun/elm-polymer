@@ -1,0 +1,19 @@
+{
+  "name": "elm-polymer",
+  "version": "1.0.0",
+  "description": "Thoughts on how to integrate Polymer with Elm",
+  "dependencies": {
+    "elm": "^0.17.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinlebrun/elm-polymer-sandbox.git"
+  },
+  "author": "Kevin LE BRUN <lebrun.k@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinlebrun/elm-polymer-sandbox/issues"
+  },
+  "homepage": "https://github.com/kevinlebrun/elm-polymer-sandbox#readme"
+}

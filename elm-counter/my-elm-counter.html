@@ -1,0 +1,44 @@
+<link rel="import" href="../bower_components/polymer/polymer.html"/>
+
+<dom-module id="my-elm-counter">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+
+        <div id="elm_counter"></div>
+
+        <div>
+            <button on-click="reset">Reset</button>
+        </div>
+    </template>
+
+    <script>
+        (function () {
+            var c;
+
+            Polymer({
+                is: "my-elm-counter",
+                properties: {
+                    value: {
+                        type: Number,
+                        value: 0,
+                        notify: true,
+                    },
+                },
+                reset() {
+                    this.value = 0;
+                    c.ports.set.send(this.value);
+                },
+                ready() {
+                    c = Elm.Counter.embed(this.$.elm_counter, { value : this.value });
+                    c.ports.change.subscribe(value => {
+                        this.value = value;
+                    });
+                }
+            })
+        })();
+    </script>
+</dom-module>
