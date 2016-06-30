@@ -2,22 +2,14 @@
 
 <dom-module id="my-elm-counter">
     <template>
-        <style>
-            :host {
-                display: block;
-            }
-        </style>
+        <div id="embed"></div>
 
-        <div id="elm_counter"></div>
-
-        <div>
-            <button on-click="reset">Reset</button>
-        </div>
+        <p>Controls: <button on-click="reset">Reset</button></p>
     </template>
 
     <script>
         (function () {
-            var c;
+            var app;
 
             Polymer({
                 is: "my-elm-counter",
@@ -30,15 +22,15 @@
                 },
                 reset() {
                     this.value = 0;
-                    c.ports.set.send(this.value);
+                    app.ports.set.send(this.value);
                 },
                 ready() {
-                    c = Elm.Counter.embed(this.$.elm_counter, { value : this.value });
-                    c.ports.change.subscribe(value => {
+                    app = Elm.Counter.embed(this.$.embed, { value : this.value });
+                    app.ports.change.subscribe(value => {
                         this.value = value;
                     });
-                }
-            })
+                },
+            });
         })();
     </script>
 </dom-module>

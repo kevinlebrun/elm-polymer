@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kevinlebrun/elm-polymer-sandbox/issues"
   },
+  "scripts": {
+    "postinstall": "bower install && elm-package install && sh ./build.sh"
+  },
   "homepage": "https://github.com/kevinlebrun/elm-polymer-sandbox#readme"
 }

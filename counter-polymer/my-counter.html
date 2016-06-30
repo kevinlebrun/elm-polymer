@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer/polymer.html"/>
+
+<dom-module id="my-counter">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+
+        <button on-click="decrement">-</button>
+        <span>[[value]]</span>
+        <button on-click="increment">+</button>
+    </template>
+
+    <script>
+        Polymer({
+            is: "my-counter",
+            properties: {
+                value: {
+                    type: Number,
+                    value: -1,
+                    notify: true,
+                },
+            },
+            increment() {
+                this.value++;
+                this.fire('change', this.value);
+            },
+            decrement() {
+                this.value--;
+                this.fire('change', this.value);
+            },
+        })
+    </script>
+</dom-module>

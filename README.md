@@ -1,21 +1,23 @@
 # Elm + Polymer = ?
 
+You can find the accompanying slides
+[here](http://slides.com/kevinlebrun/elm-polymer).
+
+## Usage
+
 Install dependencies:
 
     $ npm install
-    $ bower install
-    $ ./node_modules/.bin/elm-package install
 
 You can build all Elm sources using:
 
-    $ sh build.sh
+    $ ./build.sh
 
-I usually serve that kind of content with Caddy:
+I usually serve that kind of content with
+[Caddy](https://github.com/mholt/caddy):
 
     $ caddy
 
-You will find examples on the following links:
+## License
 
- - http://localhost:2015/elm-counter/
- - http://localhost:2015/card-counter/
- - http://localhost:2015/polymer-counter/
+The MIT license

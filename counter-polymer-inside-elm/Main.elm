@@ -1,4 +1,4 @@
-module Main exposing (..)
+port module Main exposing (..)
 
 import Html exposing (..)
 import Html.App exposing (..)
@@ -11,19 +11,33 @@ type alias Model =
     Int
 
 
-init : ( Model, Cmd Msg )
-init =
-    ( 2, Cmd.none )
+init : { a | value : Int } -> ( Model, Cmd Msg )
+init flags =
+    ( flags.value, Cmd.none )
+
+
+detailValue =
+    Json.at [ "detail", "value" ] Json.int
+
+
+onValueChanged tagger =
+    on "value-changed" <| Json.map tagger detailValue
+
+value =
+    attribute "value"
+
+myCounter =
+    node "my-counter"
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ node "my-counter"
-            [ attribute "value" <| toString model, on "value-changed" (Json.map Change <| Json.at [ "detail", "value" ] Json.int) ]
-            [ ]
-        , button [ onClick Reset ] [ text "Reset" ]
-        , p [ class "help" ] [ text <| "In Elm, the value is: " ++ (toString model) ]
+        [ myCounter [ value <| toString model , onValueChanged Change ] []
+        , p []
+            [ text "Controls:"
+            , button [ onClick Reset ] [ text "Reset" ]
+            ]
         ]
 
 
@@ -41,20 +55,23 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         Change v ->
-            ( v, Cmd.none )
+            ( v, change v )
 
         Reset ->
-            init
+            ( 0, change 0 )
 
         NoOp ->
             ( model, Cmd.none )
 
 
-main : Program Never
+main : Program { value : Int }
 main =
-    program
+    programWithFlags
         { init = init
         , view = view
         , update = update
         , subscriptions = \_ -> Sub.none
         }
+
+
+port change : Model -> Cmd msg

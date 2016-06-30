@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Elm Counter</title>
+        <title>Elm counter inside Polymer</title>
 
         <!-- <script src="../bower_components/webcomponentsjs/webcomponents&#45;lite.min.js"></script> -->
 
@@ -11,9 +11,9 @@
     </head>
 
     <body>
-        <my-elm-counter id="counter" value=1></my-elm-counter>
+        <p>In the document, <br>the value is <span class="value">1</span></p>
 
-        <p>In the document, the value is <span class="value">1</span></p>
+        <my-elm-counter id="counter" value=1></my-elm-counter>
 
         <script>
             var counter = document.getElementById('counter');

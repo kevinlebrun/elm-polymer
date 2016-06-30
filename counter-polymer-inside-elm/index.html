@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Polymer counter inside Elm</title>
+
+        <!-- <script src="../bower_components/webcomponentsjs/webcomponents&#45;lite.min.js"></script> -->
+
+        <script src="main.js"></script>
+
+        <link rel="import" href="my-counter.html"/>
+    </head>
+
+    <body>
+        <p>In the document, <br>the value is <span class="value">2</span></p>
+
+        <div id="embed"></div>
+
+        <script>
+            var app = Elm.Main.embed(document.getElementById('embed'), { value: 2 });
+            app.ports.change.subscribe(function (value) {
+                document.querySelector('.value').textContent = value;
+            });
+        </script>
+    </body>
+</html>

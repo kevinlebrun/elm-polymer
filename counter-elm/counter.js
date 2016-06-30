@@ -7301,15 +7301,15 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _user$project$Counter$init = function (flags) {
+var _kevinlebrun$elm_polymer_sandbox$Counter$init = function (flags) {
 	return {ctor: '_Tuple2', _0: flags.value, _1: _elm_lang$core$Platform_Cmd$none};
 };
-var _user$project$Counter$change = _elm_lang$core$Native_Platform.outgoingPort(
+var _kevinlebrun$elm_polymer_sandbox$Counter$change = _elm_lang$core$Native_Platform.outgoingPort(
 	'change',
 	function (v) {
 		return v;
 	});
-var _user$project$Counter$update = F2(
+var _kevinlebrun$elm_polymer_sandbox$Counter$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
 		switch (_p0.ctor) {
@@ -7318,31 +7318,31 @@ var _user$project$Counter$update = F2(
 				return {
 					ctor: '_Tuple2',
 					_0: $new,
-					_1: _user$project$Counter$change($new)
+					_1: _kevinlebrun$elm_polymer_sandbox$Counter$change($new)
 				};
 			case 'Decrement':
 				var $new = model - 1;
 				return {
 					ctor: '_Tuple2',
 					_0: $new,
-					_1: _user$project$Counter$change($new)
+					_1: _kevinlebrun$elm_polymer_sandbox$Counter$change($new)
 				};
 			default:
 				var _p1 = _p0._0;
 				return {
 					ctor: '_Tuple2',
 					_0: _p1,
-					_1: _user$project$Counter$change(_p1)
+					_1: _kevinlebrun$elm_polymer_sandbox$Counter$change(_p1)
 				};
 		}
 	});
-var _user$project$Counter$set = _elm_lang$core$Native_Platform.incomingPort('set', _elm_lang$core$Json_Decode$int);
-var _user$project$Counter$Set = function (a) {
+var _kevinlebrun$elm_polymer_sandbox$Counter$set = _elm_lang$core$Native_Platform.incomingPort('set', _elm_lang$core$Json_Decode$int);
+var _kevinlebrun$elm_polymer_sandbox$Counter$Set = function (a) {
 	return {ctor: 'Set', _0: a};
 };
-var _user$project$Counter$Decrement = {ctor: 'Decrement'};
-var _user$project$Counter$Increment = {ctor: 'Increment'};
-var _user$project$Counter$view = function (model) {
+var _kevinlebrun$elm_polymer_sandbox$Counter$Decrement = {ctor: 'Decrement'};
+var _kevinlebrun$elm_polymer_sandbox$Counter$Increment = {ctor: 'Increment'};
+var _kevinlebrun$elm_polymer_sandbox$Counter$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
@@ -7353,7 +7353,7 @@ var _user$project$Counter$view = function (model) {
 				_elm_lang$html$Html$button,
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html_Events$onClick(_user$project$Counter$Decrement)
+						_elm_lang$html$Html_Events$onClick(_kevinlebrun$elm_polymer_sandbox$Counter$Decrement)
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -7372,7 +7372,7 @@ var _user$project$Counter$view = function (model) {
 				_elm_lang$html$Html$button,
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$html$Html_Events$onClick(_user$project$Counter$Increment)
+						_elm_lang$html$Html_Events$onClick(_kevinlebrun$elm_polymer_sandbox$Counter$Increment)
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -7380,14 +7380,14 @@ var _user$project$Counter$view = function (model) {
 					]))
 			]));
 };
-var _user$project$Counter$main = {
+var _kevinlebrun$elm_polymer_sandbox$Counter$main = {
 	main: _elm_lang$html$Html_App$programWithFlags(
 		{
-			init: _user$project$Counter$init,
-			view: _user$project$Counter$view,
-			update: _user$project$Counter$update,
+			init: _kevinlebrun$elm_polymer_sandbox$Counter$init,
+			view: _kevinlebrun$elm_polymer_sandbox$Counter$view,
+			update: _kevinlebrun$elm_polymer_sandbox$Counter$update,
 			subscriptions: function (_p2) {
-				return _user$project$Counter$set(_user$project$Counter$Set);
+				return _kevinlebrun$elm_polymer_sandbox$Counter$set(_kevinlebrun$elm_polymer_sandbox$Counter$Set);
 			}
 		}),
 	flags: A2(
@@ -7401,7 +7401,7 @@ var _user$project$Counter$main = {
 
 var Elm = {};
 Elm['Counter'] = Elm['Counter'] || {};
-_elm_lang$core$Native_Platform.addPublicModule(Elm['Counter'], 'Counter', typeof _user$project$Counter$main === 'undefined' ? null : _user$project$Counter$main);
+_elm_lang$core$Native_Platform.addPublicModule(Elm['Counter'], 'Counter', typeof _kevinlebrun$elm_polymer_sandbox$Counter$main === 'undefined' ? null : _kevinlebrun$elm_polymer_sandbox$Counter$main);
 
 if (typeof define === "function" && define['amd'])
 {

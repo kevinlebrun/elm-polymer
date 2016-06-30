@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Polymer Counter</title>
+        <title>Counter Polymer</title>
 
         <!-- <script src="../bower_components/webcomponentsjs/webcomponents&#45;lite.min.js"></script> -->
-
-        <script src="main.js"></script>
 
         <link rel="import" href="my-counter.html"/>
     </head>
 
     <body>
-        <div id="elm-main"></div>
+        <my-counter id="counter" value="0"></my-counter>
 
         <script>
-            Elm.Main.embed(document.getElementById('elm-main'));
+            var counter = document.getElementById('counter');
+            counter.addEventListener('change', function (e) {
+                console.log(e.detail);
+            });
         </script>
     </body>
 </html>

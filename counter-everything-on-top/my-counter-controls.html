@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer.html"/>
+
+<dom-module id="my-counter-controls">
+    <template>
+        <p>Controls: <button on-click="reset">Reset</button></p>
+    </template>
+
+    <script>
+        (function () {
+
+            Polymer({
+                is: "my-counter-controls",
+                reset() {
+                    this.fire('reset');
+                },
+            })
+        })();
+    </script>
+</dom-module>

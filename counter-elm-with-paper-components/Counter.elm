@@ -15,15 +15,22 @@ init =
     ( 3, Cmd.none )
 
 
+paperCard =
+    node "paper-card"
+
+paperButton =
+    node "paper-button"
+
+
 view : Model -> Html Msg
 view model =
     div []
-        [ node "paper-card"
-            [ attribute "heading" <| "Counter: " ++ (toString model) ]
-            [ div [ class "card-content" ] [ text <| toString model ]
+        [ paperCard
+            [ attribute "heading" ("Counter: " ++ (toString model)) ]
+            [ div [ class "card-content" ] [ text (toString model) ]
             , div [ class "card-actions" ]
-                [ node "paper-button" [ onClick Decrement ] [ text "Decrement" ]
-                , node "paper-button" [ onClick Increment ] [ text "Increment" ]
+                [ paperButton [ onClick Decrement ] [ text "Decrement" ]
+                , paperButton [ onClick Increment ] [ text "Increment" ]
                 ]
             ]
         ]
