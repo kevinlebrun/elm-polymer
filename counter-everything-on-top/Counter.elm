@@ -1,7 +1,6 @@
 port module Counter exposing (..)
 
 import Html exposing (..)
-import Html.App exposing (..)
 import Html.Events exposing (..)
 
 
@@ -50,7 +49,7 @@ update msg model =
             ( value, change value )
 
 
-main : Program { value : Int }
+main : Program { value : Int } Model Msg
 main =
     programWithFlags
         { init = init

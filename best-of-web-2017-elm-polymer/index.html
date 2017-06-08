@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card Counter</title>
+
+        <!-- Lite package doesn't include Shadow DOM polyfills -->
+        <!-- <script src="../bower_components/webcomponentsjs/webcomponents&#45;lite.min.js"></script> -->
+        <script src="../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+        <script>
+            window.Polymer = {
+                dom: 'shadow',
+                lazyRegister: true
+            };
+        </script>
+
+        <script src="counter.js"></script>
+
+        <link rel="import" href="../bower_components/paper-button/paper-button.html"/>
+        <link rel="import" href="../bower_components/paper-card/paper-card.html"/>
+    </head>
+
+    <body>
+        <div id="counter"></div>
+
+        <script>
+            var counter = Elm.Counter.embed(document.getElementById('counter'));
+
+            counter.ports.change.subscribe(function (value) {
+                console.log(value);
+            });
+        </script>
+    </body>
+</html>

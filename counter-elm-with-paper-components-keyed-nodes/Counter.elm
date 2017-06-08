@@ -1,7 +1,6 @@
 module Card exposing (..)
 
 import Html exposing (..)
-import Html.App exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Html.Keyed
@@ -55,7 +54,7 @@ update msg model =
             ( model - 1, Cmd.none )
 
 
-main : Program Never
+main : Program Never Model Msg
 main =
     program
         { init = init

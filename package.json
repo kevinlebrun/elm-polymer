@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Thoughts on how to integrate Polymer with Elm",
   "dependencies": {
-    "elm": "^0.17.0"
+    "elm": "^0.18.0"
   },
   "devDependencies": {},
   "repository": {
